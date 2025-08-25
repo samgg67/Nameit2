@@ -30,17 +30,17 @@
             </a>
         </div>
 
-       <div class="bg-gray-200 rounded-2xl overflow-hidden shadow-md mb-6 md:mb-8 flex-grow">
-            <img src="{{ asset('images/sunny.jpg') }}" 
-             alt="Coconut" 
-             class="w-full h-64 md:h-80 object-cover">
+        <div class="bg-gray-200 rounded-2xl overflow-hidden shadow-md mb-6 md:mb-8 flex-grow">
+            <img src="{{ asset('images/apple.jpg') }}" 
+            alt="Coconut" 
+            class="w-full h-64 md:h-80 object-cover">
         </div>
 
 
         <div class="space-y-4">
             @php
-                $options = ['SUNNY', 'RAINY', 'CLOUDLY', 'SNOWY'];
-                $correctAnswer = 'SUNNY';
+                $options = ['APPLE', 'ORANGE', 'LEMON', 'PINEAPPLE'];
+                $correctAnswer = 'APPLE';
                 $points = 10; // Pontos da pergunta
             @endphp
             @foreach ($options as $option)
@@ -88,12 +88,12 @@
                         if (data.success) {
                             alert(`Correto! ${points} pontos adicionados. Total: ${data.total_points}`);
                             // Redireciona para a fase 3
-                            window.location.replace("{{ url('/iniciante3') }}");
+                            window.location.replace("{{ url('/iniciante5') }}");
                         }
 
                     } catch (error) {
                         console.error('Erro ao adicionar pontos:', error);
-                        window.location.replace("{{ url('/iniciante3') }}");
+                        window.location.replace("{{ url('/iniciante5') }}");
                     }
 
                 } else {

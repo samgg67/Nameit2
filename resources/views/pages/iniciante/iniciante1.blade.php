@@ -30,14 +30,17 @@
             </a>
         </div>
 
-        <div class="bg-gray-200 rounded-2xl overflow-hidden shadow-md mb-6 md:mb-8 flex-grow flex items-center justify-center">
-            <img src="https://placehold.co/600x400/87CEEB/FFFFFF?text=WINTER" alt="Paisagem de inverno" class="w-full h-auto object-cover">
+       <div class="bg-gray-200 rounded-2xl overflow-hidden shadow-md mb-6 md:mb-8 flex-grow">
+        <img src="{{ asset('images/fish.jpg') }}" 
+         alt="Peixe" 
+         class="w-full h-64 md:h-80 object-cover">
         </div>
+
 
         <div class="space-y-4">
             @php
-                $options = ['SPRING', 'AUTUMN', 'SUMMER', 'WINTER'];
-                $correctAnswer = 'WINTER';
+                $options = ['DOG', 'CAT', 'FISH', 'BIRD'];
+                $correctAnswer = 'FISH';
                 $points = 10; // Pontos da pergunta
             @endphp
             @foreach ($options as $option)

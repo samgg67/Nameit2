@@ -82,13 +82,6 @@ for ($i = 1; $i <= 25; $i++) {
     })->name("dificil.fase{$i}");
 }
 
-
-Route::get('/ranking', function () {
-    $scores = Score::with('user')->orderBy('score', 'desc')->get();
-    return view('pages.ranking', compact('scores'));
-})->name('ranking');
-
-
 Route::post('/quiz/add-points', [QuizController::class, 'addPoints'])->name('quiz.addPoints');
 
 
