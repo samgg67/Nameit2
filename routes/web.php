@@ -6,24 +6,21 @@ use Illuminate\Support\Facades\Route;
 use App\Models\User;
 use App\Models\Score;
 
-// Página inicial
+
 Route::get('/', function () {
     return view('welcome');
 });
 
-// Dashboard
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
-// Rotas protegidas por autenticação
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-// Páginas principais
 Route::get('/iniciante', function () {
     return view('pages.iniciante.iniciante');
 });
@@ -32,12 +29,11 @@ Route::get('/intermediario', function () {
     return view('pages.intermediario.intermediario');
 });
 
-// Redireciona /dificil para a primeira fase
-Route::get('/avancado', function () {
-    return redirect()->route('pages.avancado.fase1');
+Route::get('/dificil', function () {
+    return view('pages.dificil.dificil');
 });
 
-// 🔹 Fases do iniciante (1 a 25)
+
 for ($i = 1; $i <= 25; $i++) {
     Route::get("/iniciante{$i}", function () use ($i) {
         if ($i === 1) {
@@ -67,13 +63,12 @@ for ($i = 1; $i <= 25; $i++) {
     })->name("intermediario.fase{$i}");
 }
 
-// 🔹 Fases do difícil (1 a 25)
-for ($i = 1; $i <= 25; $i++) {
+for ($i = 1; $i <= 26; $i++) {
     Route::get("/dificil{$i}", function () use ($i) {
         if ($i === 1) {
             $options = ['DOG', 'CAT', 'FISH', 'BIRD'];
             $correctAnswer = 'FISH';
-            $points = 30;
+            $points = 30; // Pontos ajustados para difícil
 
             return view("pages.dificil.dificil{$i}", compact('options', 'correctAnswer', 'points'));
         }
@@ -82,6 +77,7 @@ for ($i = 1; $i <= 25; $i++) {
     })->name("dificil.fase{$i}");
 }
 
+
 Route::post('/quiz/add-points', [QuizController::class, 'addPoints'])->name('quiz.addPoints');
 
 
@@ -89,5 +85,10 @@ Route::get('/ranking', function () {
     $scores = Score::with('user')->orderBy('score', 'desc')->get();
     return view('pages.ranking', compact('scores'));
 })->name('ranking');
+
+Route::get('/ajuda', function () {
+    return view('pages.ajuda');
+})->name('ajuda');
+
 
 require __DIR__.'/auth.php';

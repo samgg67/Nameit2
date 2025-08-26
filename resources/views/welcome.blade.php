@@ -6,7 +6,7 @@
     <title>Name It</title>
     @vite('resources/css/app.css')
 </head>
-<body class="flex items-center justify-center min-h-screen bg-[#DB7580]">
+<body class="flex items-center justify-center min-h-screen bg-[#8F53DB]">
     <div class="bg-[#FFE4AA] w-[920px] h-[712px] rounded-2xl flex flex-col items-center justify-center shadow-md relative border-2 border-black">
 
         <!-- Botão de ajuda -->
@@ -31,11 +31,11 @@
         <!-- Botões -->
         <div class="flex gap-6">
             <a href="{{ route('login') }}" 
-               class="px-8 py-4 bg-[#DB7580] text-white font-bold rounded-xl shadow hover:scale-105 transition">
+               class="px-8 py-4 bg-[#8F53DB] text-white font-bold border-2 border-black rounded-xl shadow hover:scale-105 transition">
                LOGIN
             </a>
             <a href="{{ route('register') }}" 
-               class="px-8 py-4 bg-[#DB7580] text-white font-bold rounded-xl shadow hover:scale-105 transition">
+               class="px-8 py-4 bg-[#8F53DB] text-white font-bold border-2 border-black rounded-xl shadow hover:scale-105 transition">
                CADASTRO
             </a>
         </div>
