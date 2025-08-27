@@ -6,8 +6,8 @@
     <title>Name It</title>
     @vite('resources/css/app.css')
 </head>
-<body class="flex items-center justify-center min-h-screen bg-[#8F53DB]">
-    <div class="bg-[#FFE4AA] w-[920px] h-[712px] rounded-2xl flex flex-col items-center justify-center shadow-md relative border-2 border-black">
+<body class="flex items-center justify-center min-h-screen bg-[#ABE4FF]">
+    <div class="bg-[#FFDAAB] w-[920px] h-[712px] rounded-2xl flex flex-col items-center justify-center shadow-md relative border-2 border-black">
 
         <!-- Botão de ajuda -->
         <a href="#" class="absolute top-4 right-4 w-10 h-10 border-2 border-black rounded-full flex items-center justify-center text-xl font-bold">

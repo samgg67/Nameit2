@@ -90,24 +90,17 @@
                             alert(`Correto! ${points} pontos adicionados. Total: ${data.total_points}`);
                             
                             // Redireciona para a próxima fase
-                            window.location.replace("{{ url('/iniciante2') }}");
+                            window.location.replace("{{ url('/dificil18') }}");
                         }
 
                     } catch (error) {
                         console.error('Erro ao adicionar pontos:', error);
                         // Redireciona mesmo em caso de erro
-                        window.location.replace("{{ url('/iniciante2') }}");
+                        window.location.replace("{{ url('/dificil18') }}");
                     }
 
                 } else {
                     event.currentTarget.classList.add('incorrect');
-
-                    // Destaca a resposta correta
-                    buttons.forEach(btn => {
-                        if (btn.dataset.option === correctAnswer) {
-                            btn.classList.add('correct-highlight');
-                        }
-                    });
 
                     // Permite nova tentativa após 1,5s
                     setTimeout(() => {

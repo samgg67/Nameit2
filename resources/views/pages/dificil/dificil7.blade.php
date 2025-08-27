@@ -39,8 +39,8 @@
 
         <div class="space-y-4">
             @php
-                $options = ['BELT', 'BRIEF', 'BERET', 'GLOVES'];
-                $correctAnswer = 'BERET';
+                $options = ['HAIRDRYER', 'MOUTHWASH', 'BATHTUB', 'SHAVER'];
+                $correctAnswer = 'BATHTUB';
                 $points = 30; // Pontos da pergunta
             @endphp
             @foreach ($options as $option)
@@ -101,13 +101,6 @@
 
                 } else {
                     event.currentTarget.classList.add('incorrect');
-
-                    // Destaca a resposta correta
-                    buttons.forEach(btn => {
-                        if (btn.dataset.option === correctAnswer) {
-                            btn.classList.add('correct-highlight');
-                        }
-                    });
 
                     // Permite nova tentativa após 1,5s
                     setTimeout(() => {

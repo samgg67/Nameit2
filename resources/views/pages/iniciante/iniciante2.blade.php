@@ -99,12 +99,6 @@
                 } else {
                     event.currentTarget.classList.add('incorrect');
 
-                    buttons.forEach(btn => {
-                        if (btn.dataset.option === correctAnswer) {
-                            btn.classList.add('correct-highlight');
-                        }
-                    });
-
                     setTimeout(() => {
                         buttons.forEach(btn => btn.disabled = false);
                         buttons.forEach(btn => btn.classList.remove('correct', 'incorrect', 'correct-highlight'));

@@ -39,8 +39,8 @@
 
         <div class="space-y-4">
             @php
-                $options = ['SOCKS', 'GLUE', 'SCARF', 'CASH'];
-                $correctAnswer = 'SCARF';
+                $options = ['LAWN MOWER', 'MICROWAVE', 'CONTROL', 'APPLIANCES'];
+                $correctAnswer = 'LAWN MOWER';
                 $points = 30; // Pontos da pergunta
             @endphp
             @foreach ($options as $option)
@@ -90,25 +90,17 @@
                             alert(`Correto! ${points} pontos adicionados. Total: ${data.total_points}`);
                             
                             // Redireciona para a próxima fase
-                            window.location.replace("{{ url('/iniciante2') }}");
+                            window.location.replace("{{ url('/dificil19') }}");
                         }
 
                     } catch (error) {
                         console.error('Erro ao adicionar pontos:', error);
                         // Redireciona mesmo em caso de erro
-                        window.location.replace("{{ url('/iniciante2') }}");
+                        window.location.replace("{{ url('/dificil19') }}");
                     }
 
                 } else {
                     event.currentTarget.classList.add('incorrect');
-
-                    // Destaca a resposta correta
-                    buttons.forEach(btn => {
-                        if (btn.dataset.option === correctAnswer) {
-                            btn.classList.add('correct-highlight');
-                        }
-                    });
-
                     // Permite nova tentativa após 1,5s
                     setTimeout(() => {
                         buttons.forEach(btn => btn.disabled = false);
