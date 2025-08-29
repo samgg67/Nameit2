@@ -7,10 +7,10 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         .correct {
-            background-color: #4ade80 !important; /* Verde para acerto */
+            background-color: #4ade80 !important;
         }
         .incorrect {
-            background-color: #ef4444 !important; /* Vermelho para erro */
+            background-color: #ef4444 !important; 
         }
         .correct-highlight {
             background-color: #22c55e !important;
@@ -39,9 +39,9 @@
 
         <div class="space-y-4">
             @php
-                $options = ['BEE', 'ANT', 'FLY', 'BUTTERFLY'];
-                $correctAnswer = 'BEE';
-                $points = 10; // Pontos da pergunta
+                $options = ['APRICOT', 'PASSION FRUIT', 'MANGO', 'CHERRY'];
+                $correctAnswer = 'STRAWBERRY';
+                $points = 20; 
             @endphp
             @foreach ($options as $option)
             <button class="quiz-option w-full bg-[#FFB6C1] hover:bg-[#FF9AA2] text-white font-bold py-4 px-6 rounded-xl transition-colors duration-300 flex justify-between items-center" data-option="{{ $option }}">
@@ -56,7 +56,6 @@
         </div>
     </div>
 
-    <!-- Script AJAX para enviar pontos e redirecionar -->
     <script>
     document.addEventListener('DOMContentLoaded', () => {
         const correctAnswer = '{{ $correctAnswer }}';
@@ -67,7 +66,7 @@
             button.addEventListener('click', async (event) => {
                 const selectedOption = event.currentTarget.dataset.option;
                 
-                // Desabilita todos os botões para evitar múltiplos cliques
+                
                 buttons.forEach(btn => btn.disabled = true);
 
                 if (selectedOption === correctAnswer) {
@@ -89,27 +88,25 @@
                         if (data.success) {
                             alert(`Correto! ${points} pontos adicionados. Total: ${data.total_points}`);
                             
-                            // Redireciona para a próxima fase
-                            window.location.replace("{{ url('/iniciante7') }}");
+                            
+                            window.location.replace("{{ url('/intermediario19') }}");
                         }
 
                     } catch (error) {
                         console.error('Erro ao adicionar pontos:', error);
-                        // Redireciona mesmo em caso de erro
-                        window.location.replace("{{ url('/iniciante7') }}");
+                        
+                        window.location.replace("{{ url('/intermediario19') }}");
                     }
 
                 } else {
                     event.currentTarget.classList.add('incorrect');
 
-                    // Destaca a resposta correta
                     buttons.forEach(btn => {
                         if (btn.dataset.option === correctAnswer) {
                             btn.classList.add('correct-highlight');
                         }
                     });
 
-                    // Permite nova tentativa após 1,5s
                     setTimeout(() => {
                         buttons.forEach(btn => btn.disabled = false);
                         buttons.forEach(btn => btn.classList.remove('correct', 'incorrect', 'correct-highlight'));
@@ -118,7 +115,6 @@
             });
         });
 
-        // Impede que o usuário volte para a pergunta anterior
         history.replaceState(null, null, location.href);
         window.onpopstate = function () {
             history.go(1);

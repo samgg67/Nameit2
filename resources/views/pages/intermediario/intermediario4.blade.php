@@ -7,10 +7,10 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         .correct {
-            background-color: #4ade80 !important;
+            background-color: #4ade80 !important; /* Verde para acerto */
         }
         .incorrect {
-            background-color: #ef4444 !important; 
+            background-color: #ef4444 !important; /* Vermelho para erro */
         }
         .correct-highlight {
             background-color: #22c55e !important;
@@ -31,7 +31,7 @@
         </div>
 
         <div class="bg-gray-200 rounded-2xl overflow-hidden shadow-md mb-6 md:mb-8 flex-grow">
-    <img src="{{ asset('images/bee.jpg') }}" 
+    <img src="{{ asset('images/eagle.jpeg') }}" 
          alt="Abelha" 
          class="w-full h-64 md:h-80 object-cover">
 </div>
@@ -65,8 +65,7 @@
         buttons.forEach(button => {
             button.addEventListener('click', async (event) => {
                 const selectedOption = event.currentTarget.dataset.option;
-                
-                
+
                 buttons.forEach(btn => btn.disabled = true);
 
                 if (selectedOption === correctAnswer) {
@@ -87,25 +86,18 @@
 
                         if (data.success) {
                             alert(`Correto! ${points} pontos adicionados. Total: ${data.total_points}`);
-                            
-                            
-                            window.location.replace("{{ url('/intermediario5') }}");
+
+                            window.location.replace("{{ url('/intermediario2') }}");
                         }
 
                     } catch (error) {
                         console.error('Erro ao adicionar pontos:', error);
-                        
-                        window.location.replace("{{ url('/intermediario5') }}");
+          
+                        window.location.replace("{{ url('/intermediario2') }}");
                     }
 
                 } else {
                     event.currentTarget.classList.add('incorrect');
-
-                    buttons.forEach(btn => {
-                        if (btn.dataset.option === correctAnswer) {
-                            btn.classList.add('correct-highlight');
-                        }
-                    });
 
                     setTimeout(() => {
                         buttons.forEach(btn => btn.disabled = false);

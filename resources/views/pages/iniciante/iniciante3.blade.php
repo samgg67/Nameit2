@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fase Iniciante 2 - Animal Quiz</title>
+    <title>Fase Iniciante - Animal Quiz</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         .correct {
@@ -30,16 +30,16 @@
             </a>
         </div>
 
-        <div class="bg-gray-200 rounded-2xl overflow-hidden shadow-md mb-6 md:mb-8 flex-grow">
-    <img src="{{ asset('images/winter.webp') }}" 
-         alt="Coconut" 
+       <div class="bg-gray-200 rounded-2xl overflow-hidden shadow-md mb-6 md:mb-8 flex-grow">
+        <img src="{{ asset('images/winter.webp') }}" 
+         alt="Peixe" 
          class="w-full h-64 md:h-80 object-cover">
-</div>
+        </div>
 
 
         <div class="space-y-4">
             @php
-                $options = ['SPRING', 'AUTUMN', 'SUMMER', 'WINTER'];
+                $options = ['SPRING', 'WUTUMN', 'SUMMER', 'WINTER'];
                 $correctAnswer = 'WINTER';
                 $points = 10; // Pontos da pergunta
             @endphp
@@ -67,6 +67,7 @@
             button.addEventListener('click', async (event) => {
                 const selectedOption = event.currentTarget.dataset.option;
                 
+                // Desabilita todos os botões para evitar múltiplos cliques
                 buttons.forEach(btn => btn.disabled = true);
 
                 if (selectedOption === correctAnswer) {
@@ -87,24 +88,21 @@
 
                         if (data.success) {
                             alert(`Correto! ${points} pontos adicionados. Total: ${data.total_points}`);
-                            // Redireciona para a fase 3
+                            
+                            // Redireciona para a próxima fase
                             window.location.replace("{{ url('/iniciante4') }}");
                         }
 
                     } catch (error) {
                         console.error('Erro ao adicionar pontos:', error);
+                        // Redireciona mesmo em caso de erro
                         window.location.replace("{{ url('/iniciante4') }}");
                     }
 
                 } else {
                     event.currentTarget.classList.add('incorrect');
 
-                    buttons.forEach(btn => {
-                        if (btn.dataset.option === correctAnswer) {
-                            btn.classList.add('correct-highlight');
-                        }
-                    });
-
+                    // Permite nova tentativa após 1,5s
                     setTimeout(() => {
                         buttons.forEach(btn => btn.disabled = false);
                         buttons.forEach(btn => btn.classList.remove('correct', 'incorrect', 'correct-highlight'));
@@ -113,8 +111,11 @@
             });
         });
 
+        // Impede que o usuário volte para a pergunta anterior
         history.replaceState(null, null, location.href);
-        window.onpopstate = function () { history.go(1); };
+        window.onpopstate = function () {
+            history.go(1);
+        };
     });
     </script>
 

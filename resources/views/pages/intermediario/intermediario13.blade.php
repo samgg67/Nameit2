@@ -39,8 +39,8 @@
 
         <div class="space-y-4">
             @php
-                $options = ['AIRPLANE', 'BOAT', 'SUBWAY', 'CAR'];
-                $correctAnswer = 'THUNDER';
+                $options = ['VIOLIN', 'GUITAR', 'PIANO', 'SAXOPHONE'];
+                $correctAnswer = 'GUITAR';
                 $points = 20; 
             @endphp
             @foreach ($options as $option)
@@ -89,13 +89,13 @@
                             alert(`Correto! ${points} pontos adicionados. Total: ${data.total_points}`);
                             
                             
-                            window.location.replace("{{ url('/intermediario6') }}");
+                            window.location.replace("{{ url('/intermediario14') }}");
                         }
 
                     } catch (error) {
                         console.error('Erro ao adicionar pontos:', error);
                         
-                        window.location.replace("{{ url('/intermediario6') }}");
+                        window.location.replace("{{ url('/intermediario14') }}");
                     }
 
                 } else {

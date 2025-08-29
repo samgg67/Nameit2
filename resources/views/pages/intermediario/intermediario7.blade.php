@@ -40,7 +40,7 @@
         <div class="space-y-4">
             @php
                 $options = ['GREEN', 'TURQUOISE', 'BROWN', 'RED'];
-                $correctAnswer = 'THUNDER';
+                $correctAnswer = 'TURQUOISE';
                 $points = 20; 
             @endphp
             @foreach ($options as $option)

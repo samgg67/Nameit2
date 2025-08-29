@@ -102,14 +102,6 @@
                 } else {
                     event.currentTarget.classList.add('incorrect');
 
-                    // Destaca a resposta correta
-                    buttons.forEach(btn => {
-                        if (btn.dataset.option === correctAnswer) {
-                            btn.classList.add('correct-highlight');
-                        }
-                    });
-
-                    // Permite nova tentativa após 1,5s
                     setTimeout(() => {
                         buttons.forEach(btn => btn.disabled = false);
                         buttons.forEach(btn => btn.classList.remove('correct', 'incorrect', 'correct-highlight'));

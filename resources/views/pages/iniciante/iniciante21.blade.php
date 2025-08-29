@@ -30,11 +30,11 @@
             </a>
         </div>
 
-        <div class="bg-gray-200 rounded-2xl overflow-hidden shadow-md mb-6 md:mb-8 flex-grow">
-    <img src="{{ asset('images/unitedstates.webp') }}" 
-         alt="Coconut" 
+       <div class="bg-gray-200 rounded-2xl overflow-hidden shadow-md mb-6 md:mb-8 flex-grow">
+        <img src="{{ asset('images/unitedstates.webp') }}" 
+         alt="Peixe" 
          class="w-full h-64 md:h-80 object-cover">
-</div>
+        </div>
 
 
         <div class="space-y-4">
@@ -101,13 +101,6 @@
 
                 } else {
                     event.currentTarget.classList.add('incorrect');
-
-                    // Destaca a resposta correta
-                    buttons.forEach(btn => {
-                        if (btn.dataset.option === correctAnswer) {
-                            btn.classList.add('correct-highlight');
-                        }
-                    });
 
                     // Permite nova tentativa após 1,5s
                     setTimeout(() => {

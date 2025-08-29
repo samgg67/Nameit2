@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Iniciante - Fase 25</title>
+    <title>Fase Iniciante - Animal Quiz</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         .correct {
@@ -30,12 +30,11 @@
             </a>
         </div>
 
-        <div class="bg-gray-200 rounded-2xl overflow-hidden shadow-md mb-6 md:mb-8 flex-grow">
-    <img src="{{ asset('images/coconut.avif') }}" 
-         alt="Coconut" 
+       <div class="bg-gray-200 rounded-2xl overflow-hidden shadow-md mb-6 md:mb-8 flex-grow">
+        <img src="{{ asset('images/coconut.avif') }}" 
+         alt="Peixe" 
          class="w-full h-64 md:h-80 object-cover">
-</div>
-
+        </div>
 
 
         <div class="space-y-4">
@@ -91,24 +90,17 @@
                             alert(`Correto! ${points} pontos adicionados. Total: ${data.total_points}`);
                             
                             // Redireciona para a próxima fase
-                            window.location.replace("{{ url('/iniciante2') }}");
+                            window.location.replace("{{ url('/iniciante23') }}");
                         }
 
                     } catch (error) {
                         console.error('Erro ao adicionar pontos:', error);
                         // Redireciona mesmo em caso de erro
-                        window.location.replace("{{ url('/iniciante2') }}");
+                        window.location.replace("{{ url('/iniciante23') }}");
                     }
 
                 } else {
                     event.currentTarget.classList.add('incorrect');
-
-                    // Destaca a resposta correta
-                    buttons.forEach(btn => {
-                        if (btn.dataset.option === correctAnswer) {
-                            btn.classList.add('correct-highlight');
-                        }
-                    });
 
                     // Permite nova tentativa após 1,5s
                     setTimeout(() => {

@@ -31,7 +31,7 @@
         </div>
 
         <div class="bg-gray-200 rounded-2xl overflow-hidden shadow-md mb-6 md:mb-8 flex-grow">
-    <img src="{{ asset('images/bee.jpg') }}" 
+    <img src="{{ asset('images/shoes.jpg') }}" 
          alt="Abelha" 
          class="w-full h-64 md:h-80 object-cover">
 </div>
