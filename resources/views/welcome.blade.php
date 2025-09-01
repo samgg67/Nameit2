@@ -25,17 +25,17 @@
                 <span class="text-yellow-700 font-bold">T</span>
                 <span class="text-red-600 font-extrabold">!</span>
             </h1>
-            <p class="mt-2 text-sm tracking-wide text-gray-700">PARA APRENDER FALANDO</p>
+            <p class="mt-2 text-sm tracking-wide text-black">PARA APRENDER FALANDO</p>
         </div>
 
         <!-- Botões -->
-        <div class="flex gap-6">
+        <div class="flex gap-8">
             <a href="{{ route('login') }}" 
-               class="px-8 py-4 bg-[#8F53DB] text-white font-bold border-2 border-black rounded-xl shadow hover:scale-105 transition">
+               class="px-10 py-4 bg-[#8F53DB] text-black font-bold border-2 border-black rounded-xl shadow hover:scale-105 transition">
                LOGIN
             </a>
             <a href="{{ route('register') }}" 
-               class="px-8 py-4 bg-[#8F53DB] text-white font-bold border-2 border-black rounded-xl shadow hover:scale-105 transition">
+               class="px-6 py-4 bg-[#8F53DB] text-black font-bold border-2 border-black rounded-xl shadow hover:scale-105 transition">
                CADASTRO
             </a>
         </div>

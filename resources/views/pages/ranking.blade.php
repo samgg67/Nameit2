@@ -11,7 +11,7 @@
         
         <!-- Botão Home -->
         <a href="{{ route('dashboard') }}" 
-           class="absolute top-4 left-4 bg-gray-100 hover:bg-gray-200 text-gray-700 font-medium py-2 px-4 rounded-lg shadow flex items-center gap-2 transition">
+           class="absolute top-4 left-4 bg-[#ABE4FF] hover:bg-gray-200 text-gray-700 font-medium py-2 px-4 rounded-lg shadow flex items-center gap-2 transition">
              <span class="hidden sm:inline">Home</span>
         </a>
 

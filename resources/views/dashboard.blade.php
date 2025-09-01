@@ -45,7 +45,11 @@
     <div class="w-full max-w-6xl text-center">
         
         <div class="mb-10">
-            <h1 class="text-4xl md:text-5xl font-bold uppercase tracking-wider mb-3 text-black drop-shadow-md">ESCOLHA SUA FASE!</h1>
+            <h1 class="text-4xl md:text-5xl font-bold uppercase tracking-wider mb-3 text-black drop-shadow-md">Bem-Vindo!</h1>
+
+        </div>
+        
+        <div class="mb-10">
             <p class="text-xl text-black">Selecione uma das fases abaixo para começar sua aventura</p>
         </div>
         

@@ -63,7 +63,7 @@ for ($i = 1; $i <= 25; $i++) {
     })->name("intermediario.fase{$i}");
 }
 
-for ($i = 1; $i <= 26; $i++) {
+for ($i = 1; $i <= 25; $i++) {
     Route::get("/dificil{$i}", function () use ($i) {
         if ($i === 1) {
             $options = ['DOG', 'CAT', 'FISH', 'BIRD'];
@@ -89,6 +89,11 @@ Route::get('/ranking', function () {
 Route::get('/ajuda', function () {
     return view('pages.ajuda');
 })->name('ajuda');
+
+Route::get('/final', function () {
+    return view('pages.final');
+})->name('final');
+
 
 
 require __DIR__.'/auth.php';

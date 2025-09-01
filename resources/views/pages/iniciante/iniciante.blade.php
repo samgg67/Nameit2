@@ -13,7 +13,7 @@
 </head>
 <body class="bg-[#D9ABFF] flex items-center justify-center min-h-screen">
 
-    <div class="card-container bg-[#DDFFAB] p-10 md:p-8 rounded-2xl w-2/5 min-h-[50vh] flex flex-col justify-center items-center text-center">
+    <div class="card-container bg-[#DDFFAB] border-2 border-black p-10 md:p-8 rounded-2xl w-2/5 min-h-[50vh] flex flex-col justify-center items-center text-center">
 
         <h2 class="text-black text-3xl md:text-4xl font-bold mb-4">Iniciante</h2>
 
@@ -21,15 +21,15 @@
             Esta fase é ideal para quem já domina os conceitos básicos e deseja avançar com mais segurança. Aqui, você vai fortalecer seus conhecimentos, encarar novos desafios e construir uma base sólida para subir de nível com confiança.
         </p>
 
-        <div class="bg-green-500 text-white font-bold py-1 px-4 rounded-full mb-6 text-sm">
+        <div class="bg-green-500 border-2 border-black text-white font-bold py-1 px-6 rounded-full mb-8 text-sm">
             Fácil
         </div>
 
         <div class="flex space-x-4">
-            <a href="{{ route('iniciante.fase1') }}" class="bg-purple-600 hover:bg-purple-700 text-white font-bold py-2 px-6 rounded-lg transition duration-300 ease-in-out">
+            <a href="{{ route('iniciante.fase1') }}" class="bg-[#ABE4FF] border-2 border-black hover:bg-[#D9ABFF] text-black font-bold py-2 px-6 rounded-lg transition duration-300 ease-in-out">
             INICIAR
             </a>
-            <a href="{{ url('/dashboard') }}" class="bg-gray-800 hover:bg-gray-700 text-white font-bold py-2 px-6 rounded-lg transition duration-300 ease-in-out">
+            <a href="{{ url('/dashboard') }}" class="bg-[#ABE4FF] border-2 border-black hover:bg-[#D9ABFF] text-black  font-bold py-2 px-6 rounded-lg transition duration-300 ease-in-out">
             VOLTAR
             </a>
         </div>
